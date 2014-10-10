@@ -9,8 +9,8 @@ all: matSumKernel.ptx matSum
 matSumKernel.ptx: matSumKernel.cu matSumKernel.h
 	$(NVCC) -ptx matSumKernel.cu
 
-matSum:
-	$(CC) matSum.c -o matSum $(LDFLAGS)
+matSum: matSum.c
+	$(CC) $(CFLAGS) matSum.c -o matSum $(LDFLAGS)
 
 clean:
 	rm *.ptx matSum

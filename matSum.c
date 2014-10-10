@@ -12,7 +12,6 @@
 
 #include "matSumKernel.h"
 #include <string.h>
-#include "../src/common.h"
 
 #define checkCudaErrors(err)  __checkCudaErrors (err, __FILE__, __LINE__)
 
@@ -158,7 +157,7 @@ int main(int argc, char **argv)
 
 	// run
 	printf("# Running the kernel...\n");
-	int j = 1000;
+	int j = 10000;
 	while (j--) {
 		runKernel(d_a, d_b, d_c);
 		printf("# Running the kernel...\n");
